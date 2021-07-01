@@ -5,7 +5,7 @@ import 'package:weather/model/weather_forcast.dart';
 class Network {
   Future<WeatherForcast> getWeatherForecast({required String cityName}) async{
     var finalUrl = "https://api.openweathermap.org/data/2.5/forecast/daily?q="+cityName+
-        "&appid=14525566&units=imperial"; //change to metric or imperial
+        "&appid=4b61ba559f92a70dd75123c49b3bb707&units=imperial"; //change to metric or imperial
 
     Response response = await get(Uri.parse(finalUrl));
     print("URL: ${Uri.encodeFull(finalUrl)}");
@@ -17,7 +17,6 @@ class Network {
     }else {
       throw Exception("Error getting weather forecast");
     }
-
 
   }
 }
