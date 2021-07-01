@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather/model/weather_forcast.dart';
 import 'package:weather/network/network_utils.dart';
 
@@ -51,7 +52,7 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     midView(snapsot),
                     SizedBox(height: 10.0,),
-                    Icon(Icons.wb_sunny, size: 160.0,),
+                    Icon(FontAwesomeIcons.cloud, size: 160.0, color: Colors.blue,),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
@@ -78,8 +79,10 @@ class _MainPageState extends State<MainPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text("${forcast.speed.toStringAsFixed(1)} mi/h"),
-                              Icon(Icons.arrow_forward),
+                              Text("${forcast.speed.toStringAsFixed(1)} mi/h",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              Icon(FontAwesomeIcons.wind, size: 20.0, color: Colors.blueGrey,),
                             ],
                           ),
                         ),
@@ -87,8 +90,10 @@ class _MainPageState extends State<MainPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text("${forcast.humidity.toStringAsFixed(0)} %"),
-                              Icon(Icons.arrow_forward),
+                              Text("${forcast.humidity.toStringAsFixed(0)} %",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              Icon(FontAwesomeIcons.solidGrinBeamSweat, size: 20.0, color: Colors.lightGreen,),
                             ],
                           ),
                         ),
@@ -96,8 +101,10 @@ class _MainPageState extends State<MainPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text("${forcast.temp.max} °F"),
-                              Icon(Icons.arrow_forward),
+                              Text("${forcast.temp.max} °F",
+                                style: TextStyle(fontSize: 18.0),
+                              ),
+                              Icon(FontAwesomeIcons.temperatureHigh, size: 20.0, color: Colors.red,),
                             ],
                           ),
                         ),
