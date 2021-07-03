@@ -31,6 +31,7 @@ class _MainPageState extends State<MainPage> {
             onSubmitted: (value){
               setState(() {
                 _cityName = value;
+                forcastObject = Network().getWeatherForecast(cityName: _cityName);
               });
             },
             decoration: InputDecoration(
