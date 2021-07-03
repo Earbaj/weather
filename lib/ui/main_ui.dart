@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather/model/weather_forcast.dart';
 import 'package:weather/network/network_utils.dart';
+import 'package:weather/ui/custome_weather_icon.dart';
 
 import 'mid_view.dart';
 
@@ -53,7 +54,8 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     midView(snapsot),
                     SizedBox(height: 10.0,),
-                    Icon(FontAwesomeIcons.cloud, size: 160.0, color: Colors.blue,),
+                    //Icon(FontAwesomeIcons.cloud, size: 160.0, color: Colors.blue,),
+                    getWeatherIcon(description: forcast.weather[0].main, color: Colors.blue, size: 160.0),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
